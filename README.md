@@ -15,9 +15,9 @@ Some of the main problems or said better improvable facilities in the dorm are:
       The above mentioned problems are thought to be solved as described below:
 
 1- Student applications (long-and short term)
-    The application will have some different user types: Guest, Student, Assistant, Director, Finance, Technical staff, Master admin.
+    The application will have some different user types: Guest, Student, Assistant, Director, Finance, Technical staff.
     Normally everyone can view the introduction to Dormitory and can apply as a visitor without providing any information because all of them will be automatically taken by Epoka University only from his email. A guest can apply also for registration in Dormitory as a student. Both applications are reviewed by Director. For a simple visitor Director can approve or not his accommodation and besides that he will assign the room he will stay and the assistant who will look after him.
-    If the guest is applying for registration in dormitory Director reviews the application form and then requests an approval from Finance (about the payment) and the Master admin (someone from the school). If the guest is approved to be a resident in Dormitory automatically director has the right to print the contract and both of them can sign. Of course from the system Director can assign his assistant and his room.
+    If the guest is applying for registration in dormitory Director reviews the application form and then requests an approval from Finance (about the payment). If the guest is approved to be a resident in Dormitory automatically director has the right to print the contract and both of them can sign. Of course from the system Director can assign his assistant and his room.
 
 2- Food menu-s and attendees in the weekends
   There will be a user from Bereqet (chef) who will enter the menu-s every Monday for the whole week (or twice a week, it depends). Every student in Friday must check his attendance during weekend and automatically by the end of the Friday the number of students who will be in weekend is generated and send with an email to Bereqet user (chef).
@@ -29,7 +29,7 @@ Some of the main problems or said better improvable facilities in the dorm are:
   A new facility will be added for a better security to dormitory students. With face recognition (face ID) the system will identify all students and open the door to them. If a new visitor comes the system sends a notification to all assistants and Director. If one of them knows him and if the visitor have permition to enter the Dorm the door will be opened. Otherwise his photo will be saved in the DB.
 
 5- Service evaluation
-  Same as EISAPP system we thought that would be helpful and also it gives a huge help to improvement of all facilities. All services will be graded from students and then those information will anonymously be sent to Director and Master admin.
+  Same as EISAPP system we thought that would be helpful and also it gives a huge help to improvement of all facilities. All services will be graded from students and then those information will anonymously be sent to Director.
 
 6- Events and a short intro about dormitory
   Events such as matches, movies, and picnics will be shown there to all students and of course an introduction to dormitory for all guests.
