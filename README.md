@@ -37,3 +37,22 @@ Some of the main problems or said better improvable facilities in the dorm are:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://themeforest.net/item/minimal-responsive-admin-template/7326575?ref=blueberry1&_ga=2.117177798.1511338140.1523351373-653313943.1523351373
+
+
+
