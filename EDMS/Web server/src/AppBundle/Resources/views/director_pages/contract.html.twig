@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.0.2.1 (Linux)"/>
+	<meta name="author" content="epoka"/>
+	<meta name="created" content="2009-06-23T17:19:06"/>
+	<meta name="changedby" content="Florenc"/>
+	<meta name="changed" content="2017-03-10T13:55:14"/>
+	<meta name="AppVersion" content="15.0300"/>
+	<meta name="DocSecurity" content="0"/>
+	<meta name="HyperlinksChanged" content="false"/>
+	<meta name="LinksUpToDate" content="false"/>
+	<meta name="ScaleCrop" content="false"/>
+	<meta name="ShareDoc" content="false"/>
+	
+	<style type="text/css">
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Calibri"; font-size:x-small }
+		a.comment-indicator:hover + comment { background:#ffd; position:absolute; display:block; border:1px solid black; padding:0.5em;  } 
+		a.comment-indicator { background:red; display:inline-block; border:1px solid black; width:0.5em; height:0.5em;  } 
+		comment { display:none;  } 
+	</style>
+	
+</head>
+
+<body>
+<table cellspacing="0" border="0">
+	<colgroup width="123"></colgroup>
+	<colgroup width="91"></colgroup>
+	<colgroup width="89"></colgroup>
+	<colgroup width="94"></colgroup>
+	<colgroup width="89"></colgroup>
+	<colgroup width="13"></colgroup>
+	<colgroup width="149"></colgroup>
+	<tr>
+		<td colspan=7 height="21" align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000">KONVIKTI EPOKA (DJEM)</font></td>
+		</tr>
+	<tr>
+		<td colspan=7 height="25" align="center" valign=bottom><font face="Times New Roman" size=4 color="#000000">Formular Aplikimi Per Akomodimi Ne Konvikt  (2017-2018)</font></td>
+		</tr>
+	<tr>
+		<td height="21" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="31" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000">Emer / Mbiemer  :        </font></td>
+		<td style="border-bottom: 1px solid #000000" colspan=4 align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br> {{ student.name~" "~student.surname }}</font></td>
+		<td align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="31" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000">Kombesia           :</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000" colspan=4 align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br> {{ student.nationality }}</font></td>
+		<td align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" rowspan=5 align="center" valign=bottom>
+			{#<div style="height: 40px;width: 40px;background-repeat: no-repeat;background-size: cover;background-image: url({{ asset('assets/person_images/'~student.image) }})"></div>#}
+			<img src="{{ asset('assets/person_images/'~student.image) }}" alt="">
+
+		</td>
+	</tr>
+	<tr>
+		<td height="31" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000">Datelindja           :</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000" colspan=4 align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br> {{ student.birthday }}</font></td>
+		<td align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		</tr>
+	<tr>
+		<td height="31" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000">Vendlindja          :</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000" colspan=4 align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br>{{ student.city }}</font></td>
+		<td align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		</tr>
+	<tr>
+		<td height="31" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000">Tel.cel                :</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000" colspan=4 align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br>{{ student.phoneNr }}</font></td>
+		<td align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		</tr>
+	<tr>
+		<td height="31" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000">E-mail                 :</font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000" colspan=4 align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br> {{ student.email }}</font></td>
+		<td align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		</tr>
+	<tr>
+		<td height="31" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000">Adresa                :                        </font></td>
+		<td style="border-bottom: 1px solid #000000" colspan=4 align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br>{{ student.address }}</font></td>
+		<td style="border-bottom: 1px solid #000000" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td style="border-bottom: 1px solid #000000" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="32" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000">Universiteti          :</font></td>
+		<td style="border-bottom: 1px solid #000000" colspan=4 align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br>Epoka University</font></td>
+		<td style="border-bottom: 1px solid #000000" align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td style="border-bottom: 1px solid #000000" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="32" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000">Fakulteti              :</font></td>
+		<td style="border-bottom: 1px solid #000000" colspan=4 align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br>{{ student.department }}</font></td>
+		<td style="border-bottom: 1px solid #000000" align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td style="border-bottom: 1px solid #000000" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="32" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000">Dega                   :</font></td>
+		<td style="border-bottom: 1px solid #000000" colspan=4 align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br>{{ student.department }}</font></td>
+		<td style="border-bottom: 1px solid #000000" align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td style="border-bottom: 1px solid #000000" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="32" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td height="32" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000">Emri i Babait        :</font></td>
+		<td style="border-bottom: 1px solid #000000" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br>{{ student.fathersname }}</font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000">Profesioni    :</font></td>
+		<td style="border-bottom: 1px solid #000000" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br>{{ student.fathersJob }}</font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000">Nr i tij i tel   :</font></td>
+		<td style="border-bottom: 1px solid #000000" colspan=2 align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br>{{ student.fathersphoneNr }}</font></td>
+		</tr>
+	<tr>
+		<td height="32" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000">Emri i nenes         :</font></td>
+		<td style="border-bottom: 1px solid #000000" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br>{{ student.mothersname }}</font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000">Profesioni    :</font></td>
+		<td style="border-bottom: 1px solid #000000" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br>{{ student.mothersJob }}</font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000">Nr i saj i tel  :</font></td>
+		<td style="border-bottom: 1px solid #000000" colspan=2 align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br>{{ student.mothersphoneNr }}</font></td>
+	</tr>
+	<tr>
+
+		{% macro maritStatusCheck(input,toCheck) %}
+        	{% if toCheck == 'Married' %}
+				<span style="color: black">X</span>
+            {% else %}
+				<span style="color: white">X</span>
+			{% endif %}
+		{% endmacro %}
+
+		{% import '@App/director_pages/contract.html.twig' as co %}
+
+		<td colspan=2 height="32" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000">Gjendja civile e prinderve         :        :</font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000">Bashke</font></td>
+		<td align="left" valign=bottom><font style="border: 1px solid black;" face="Times New Roman" size=3 color="#000000">{{ co.maritStatusCheck(student.parentMaritStatus,'Married') }}
+		</font></td>
+
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000">Divorcuar</font></td>
+		<td  colspan=2 align="center" valign=bottom><font style="border: 1px solid black;" face="Times New Roman" size=3 color="#000000">{{ co.maritStatusCheck(student.parentMaritStatus,'Divorced') }}</font></td>
+		</tr>
+	<tr>
+		<td height="30" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td colspan=2 height="30" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000">Nr i femijeve ne familje            :</font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+	</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=2 height="30" align="left" valign=middle bgcolor="#D9D9D9"><b><font face="Times New Roman" size=3 color="#000000">Emri</font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=middle bgcolor="#D9D9D9"><b><font face="Times New Roman" size=3 color="#000000">Mosha</font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=4 align="left" valign=middle bgcolor="#D9D9D9"><b><font face="Times New Roman" size=3 color="#000000">Arsimimi i tyre</font></b></td>
+		</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=2 height="30" align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=4 align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=2 height="30" align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=4 align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=2 height="30" align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=4 align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		</tr>
+	<tr>
+		<td colspan=7 height="40" align="left" valign=bottom><font face="Times New Roman" size=3 color="#000000">Nqs keni te aferm ne Tirane te cilet mendoni ti vizitoni ne fundjave, shkruani te dhenat e tyre:</font></td>
+		</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=2 height="29" align="left" valign=middle bgcolor="#D9D9D9"><b><font face="Times New Roman" size=3 color="#000000">Emri/Mbiemri</font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=2 align="left" valign=middle bgcolor="#D9D9D9"><b><font face="Times New Roman" size=3 color="#000000">Rrethi i afrimitetit</font></b></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 align="left" valign=middle bgcolor="#D9D9D9"><b><font face="Times New Roman" size=3 color="#000000">Nr kontakti</font></b></td>
+		</tr>
+	<tr>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=2 height="29" align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=2 align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" colspan=3 align="center" valign=bottom><font face="Times New Roman" size=3 color="#000000"><br></font></td>
+		</tr>
+
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>

@@ -1,0 +1,238 @@
+{% extends "@App/finance_pages/index.html.twig" %}
+
+
+{% {% block showUser %}
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Welcome, {{ user.name }} <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="active">
+                                {% if user.image is empty %}
+                                    <img src="{{ asset('assets/person_images/default.png') }}" width="100px" class="img-rounded">
+                                {% else %}
+                                    <img src="{{ asset('assets/person_images/'~user.image) }}" width="100px" class="img-rounded">
+                                {% endif %}
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">{{ user.type|upper }}</li>
+                        </ul>
+                    </li>
+                {% endblock %}
+
+
+{% block navbar %}
+    <li class="active"><a href="{{ path('finance') }}">Home</a></li>
+    <li><a href="{{ path('show_student')}}">students</a></li>
+    <li><a href="{{ path('profile')}}">Profile</a></li>
+    <li><a href="{{ path('add')}}">Add Payment</a></li>
+{% endblock %}
+
+
+{% block breadcrumb %}
+    <li>/<a href="{{ path('finance') }}">Home</a></li>
+    <li>/<a href="#">Profile</a></li>
+{% endblock %}
+
+{% block page_title %}
+    <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Student Payments <small>Dorm Management System</small></h1>
+{% endblock %}
+
+
+{% block body %}
+
+
+    <div id='msg-upload' class="hidden messages alert alert-danger" role="alert">
+    </div>
+
+    <div>
+        <br>
+        <div class="">
+            <div class="">
+
+                <div class="">
+                    <div class="col-md-12">
+                        {{ form_start(form) }}
+
+
+                        <div  id="first-part_application-form">
+
+                            <div class="top-button-group">
+                                <a href="{{ path('show_student') }}" class="button-style btn btn-warning top-button">Back</a>
+                            </div>
+
+
+                            <h4 class="title-application"> Your Information </h4>
+
+                            <div class="space-maker">
+                                {% if user.image is empty %}
+                                    <img id="img-preview" alt="Profile picture" class="img img-thumbnail profile-img" src="{{ asset('assets/person_images/default.png' ) }}" />
+                                {% else %}
+                                    <img id="img-preview" alt="Profile picture" class="img img-thumbnail profile-img" src="{{ asset('assets/person_images/'~user.image ) }}" />
+                                {% endif %}
+
+
+                            </div>
+
+                            <div class="form-group">
+                                {% if user.image is empty  %}
+                                    {{ form_row(form.image) }}
+                                {% endif %}
+                            </div>
+
+                            <div id='msg-upload' class="hidden messages alert alert-danger" role="alert">
+                            </div>
+
+
+                            <div class="form-group">
+                                {{ form_row(form.password) }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ form_row(form.card_id) }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ form_row(form.name) }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ form_row(form.surname) }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ form_row(form.nationality) }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ form_row(form.birthday) }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ form_row(form.city) }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ form_row(form.phoneNr) }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ form_row(form.address) }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ form_row(form.email) }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ form_row(form.department) }}
+                            </div>
+
+
+                            <a onclick="changePosition()" class="btn btn-default btn-block">Next</a>
+
+                        </div>
+
+
+
+                        {# the second part of the form #}
+
+                        <div id="second-part_application-form" class="hidden">
+
+                            <div class="top-button-group">
+                                <a href="#" onclick="goBack()" class="button-style btn btn-warning top-button">Back</a>
+                            </div>
+
+                            <h4 class="title-application"> Family Information </h4>
+
+                            <div class="form-group">
+                                {{ form_row(form.fathersName) }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ form_row(form.fathersSurname) }}
+                            </div>
+
+
+                            <div class="form-group">
+                                {{ form_row(form.fathersJob) }}
+                            </div>
+
+
+                            <div class="form-group">
+                                {{ form_row(form.fathersphoneNr) }}
+                            </div>
+
+
+                            <div class="form-group">
+                                {{ form_row(form.mothersName) }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ form_row(form.mothersSurname) }}
+                            </div>
+
+
+                            <div class="form-group">
+                                {{ form_row(form.mothersJob) }}
+                            </div>
+
+
+                            <div class="form-group">
+                                {{ form_row(form.mothersphoneNr) }}
+                            </div>
+
+
+                            <div class="form-group">
+                                {{ form_row(form.parentMaritStatus) }}
+                            </div>
+
+
+
+                            <button type="submit" class="btn btn-default btn-block">Apply</button>
+
+                        </div>
+
+
+                        {{ form_end(form) }}
+
+                        {#<span class="text-muted">Username:</span> {{ user.username }}<br><br>#}
+                        {#<span class="text-muted">Email:</span> {{ user.email }}<br><br>#}
+                        {#<span class="text-muted">Phone Nr.:</span> {{ user.phoneNr }}<br><br>#}
+                        {#<span class="text-muted">Birth date:</span>{{ user.birthday|date('Y-m-d') }}<br><br>#}
+                        {#<span class="text-muted">Nationality:</span>{{ user.nationality }}<br><br>#}
+                        {#<span class="text-muted">City:</span>{{ user.city }}<br><br>#}
+                        {#<span class="text-muted">Address:</span>{{ user.address }}<br><br>#}
+                        {#<span class="text-muted">Department:</span>{{ user.department }}<br><br>#}
+                        {#<small class="text-muted">Created: 0</small>#}
+                    </div>
+
+                    {#<div class="col-md-6">#}
+                    {#<div class="activity-mini">#}
+                    {#<i class="glyphicon glyphicon-comment text-muted"></i> 500#}
+                    {#</div>#}
+                    {#<div class="activity-mini">#}
+                    {#<i class="glyphicon glyphicon-thumbs-up text-muted"></i> 1500#}
+                    {#</div>#}
+                    {#</div>#}
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

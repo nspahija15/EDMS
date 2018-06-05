@@ -1,0 +1,186 @@
+{% extends "@App/director_pages/index.html.twig" %}
+
+
+{% block showUser %}
+
+{% endblock %}
+
+
+
+{% block navbar %}
+    <li><a href="{{ path('redirect_pages') }}">Home</a></li>
+    <li><a href="{{ path('manage_assistants') }}">Assistants</a></li>
+    <li><a href="{{ path('student_performances') }}">Student Performances</a></li>
+    <li><a href="{{ path('technical_problems') }}">Tech Problems</a></li>
+    <li class="active"><a href="{{ path('applicants_show') }}">Applicants</a></li>
+    <li><a href="{{ path('director_show_profile') }}">Profile</a></li>
+{% endblock %}
+
+
+{% block breadcrumb %}
+
+    <li>/<a href="{{ path('redirect_pages') }}">Home</a></li>
+    <li class="active">/<a href="{{ path('applicants_show') }}">Applicants</a></li>
+
+{% endblock %}
+
+
+{% block page_title %}
+    <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Applicants <small>Dorm Management System</small></h1>
+{% endblock %}
+
+
+
+{% block left_group %}
+
+   <a href="#" class="list-group-item active main-color-bg">
+       <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Manage</a>
+   <a href="{{ path('applicants_show') }}" class="active list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true">
+       </span> Applicants <span class="badge">{{ applicants }}</span></a>
+   <a href="{{ path('dormitory_members') }}" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true">
+       </span> Members <span class="badge">{{ members }}</span></a>
+   <a href="{{ path('events_show') }}" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Events <span class="badge">{{ events }}</span></a>
+   <a href="{{ path('camera_show') }}" class="list-group-item"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Entrance Security </a>
+
+{% endblock %}
+
+
+{% block body %}
+
+    <h3 class="title-application"> All Applicants </h3>
+
+    <div class="space-maker"></div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading main-color-bg">
+            <h3 class="panel-title">Approved Students</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped table-hover">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+                {% for row in approved_list %}
+
+                    <tr>
+                        <td>{{ row.name~" "~row.surname }}</td>
+                        <td>{{ row.email }}</td>
+                        <td>
+                            <div>
+                                <a href="{{ path('show_information',{ 'person': row.id }) }}" class="btn-form btn-sm btn-block btn-primary">Info</a>
+                                <a href="{{ path('print_contracts', { 'student_id': row.id }) }}" class="btn-form btn-sm btn-block btn-warning ">Contract</a>
+                            </div>
+                        </td>
+                    </tr>
+
+                {% endfor %}
+
+            </table>
+        </div>
+    </div>
+
+    <div class="space-maker"></div>
+
+    <h3 class="title-application"> Student Applications </h3>
+
+    <div class="panel panel-default">
+        <div class="panel-heading main-color-bg">
+            <h3 class="panel-title">Accepted Students</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped table-hover">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+                {% for row in accepted_list %}
+
+                    <tr>
+                        <td>{{ row.name~" "~row.surname }}</td>
+                        <td>{{ row.email }}</td>
+                        <td>
+                            <div>
+                                <a href="{{ path('show_applicants_info',{ 'person': row.id }) }}" class="btn-form btn-sm btn-block btn-primary">Info</a>
+                                {#<a href="{{ path('accept_reject_applicants', { 'dormapplication': row.id }) }}" class="btn-form btn-sm btn-block btn-danger ">Reject</a>#}
+
+                                <a class='btn-form btn-sm btn-block btn-danger' type="button" data-toggle="modal"
+                                   data-target="#lost_modal"  onclick="showModalUser('Are you sure that you want to reject {{ row.name~" "~row.surname }}','{{ path('accept_reject_applicants', { 'dormapplication': row.id }) }}')">Reject</a>
+
+                            </div>
+                        </td>
+                    </tr>
+
+                {% endfor %}
+
+            </table>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading main-color-bg">
+            <h3 class="panel-title">Pending Students</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped table-hover">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+                {% for row in rejected_list %}
+                <tr>
+                    <td>{{ row.name~" "~row.surname }}</td>
+                    <td>{{ row.email }}</td>
+                    <td>
+                        <div>
+                            <a href="{{ path('show_applicants_info',{ 'person':row.id }) }}" class="btn-form btn-sm btn-block btn-primary">Info</a>
+                            {#<a href="{{ path('accept_reject_applicants', { 'dormapplication': row.id }) }}" class="btn-form btn-sm btn-block btn-success ">Accept</a>#}
+
+                            <a class='btn-form btn-sm btn-block btn-success' type="button" data-toggle="modal"
+                               data-target="#lost_modal"  onclick="showModalUser('Are you sure that you want to accept {{ row.name~" "~row.surname }}','{{ path('accept_reject_applicants', { 'dormapplication': row.id }) }}')" class='btn-form btn-sm btn-danger'>Accept</a>
+
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

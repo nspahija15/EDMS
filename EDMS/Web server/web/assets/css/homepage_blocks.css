@@ -1,0 +1,119 @@
+
+
+.left{
+    float:left !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+
+
+.right{
+    float:right !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+
+.card_inner{
+    min-height: 45px;
+    text-align: center;
+}
+
+
+/*.card_outer:hover{*/
+    /*background-color: #bbdefb;*/
+/*}*/
+
+
+
+.img_icon{
+    font-size: 40px;
+    width:60px;
+}
+
+
+
+
+
+/* - - - - - - - - - - - - - - - - - - - */
+
+
+.blue{
+    background-color: transparent;
+    color:#33b5e5;
+    border: 0.9px solid lightblue;
+    border-radius: 0;
+}
+
+.blue:hover{
+    background-color: rgba(9, 148, 230, 0.16);
+}
+
+
+.red{
+    background-color: transparent;
+    color:#ff4444;
+    border: 0.9px solid rgba(255, 72, 72, 0.51);
+    border-radius: 0;
+}
+
+.red:hover{
+    background-color: rgba(255, 28, 26, 0.16);
+}
+
+
+.green{
+    background-color: transparent;
+    color:#007E33;
+    border: 0.9px solid rgba(0, 126, 51, 0.51);
+    border-radius: 0;
+}
+
+.green:hover{
+    background-color: rgba(0, 126, 51, 0.16);
+}
+
+
+.gray{
+    background-color: transparent;
+    color:#4B515D;
+    border: 0.9px solid #4B515D;
+    border-radius: 0;
+}
+
+
+.gray:hover{
+    background-color: #4B515D;
+}
+
+
+.lightgreen{
+    background-color: transparent;
+    color: #26a69a;
+    border: 0.9px solid rgba(38, 166, 154, 0.47);
+    border-radius: 0;
+}
+
+.lightgreen:hover{
+    background-color: rgba(38, 166, 154, 0.15);
+}
+
+.brown{
+    background-color: transparent;
+    color: #6d4c41;
+    border: 0.9px solid rgba(109, 76, 65, 0.44);
+    border-radius: 0;
+}
+
+.brown:hover{
+    background-color: rgba(109, 76, 65, 0.16);
+}
+
+
+
+
+
+
+
+

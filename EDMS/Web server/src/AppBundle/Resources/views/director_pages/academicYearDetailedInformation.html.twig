@@ -1,0 +1,194 @@
+
+
+{% extends "@App/director_pages/index.html.twig" %}
+
+
+{% block showUser %}
+
+{% endblock %}
+
+{% block navbar %}
+    <li><a href="{{ path('redirect_pages') }}">Home</a></li>
+    <li><a href="{{ path('manage_assistants') }}">Assistants</a></li>
+    <li><a href="{{ path('student_performances') }}">Student Performances</a></li>
+    <li><a href="{{ path('technical_problems') }}">Tech Problems</a></li>
+    <li><a href="{{ path('applicants_show') }}">Applicants</a></li>
+{% endblock %}
+
+
+{% block breadcrumb %}
+
+    <li>/<a href="{{ path('redirect_pages') }}">Home</a></li>
+    <li>/<a href="{{ path('academic_year') }}">Academic Years</a></li>
+    <li class="active">/<a href="{{ path('academic_year_info', {'aca': ac.id}) }}">Academic Years</a></li>
+
+{% endblock %}
+
+
+{% block page_title %}
+    <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Academic Year <small>Dorm Management System</small></h1>
+{% endblock %}
+
+
+
+{% block left_group %}
+
+    <a href="#" class="list-group-item active main-color-bg">
+        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Manage
+    </a>
+
+    <a href="{{ path('applicants_show') }}" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true">
+       </span> Applicants <span class="badge">{{ applicants }}</span></a>
+    <a href="{{ path('dormitory_members') }}" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true">
+       </span> Members <span class="badge">{{ members }}</span></a>
+    <a href="{{ path('events_show') }}" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Events <span class="badge">{{ events }}</span></a>
+    <a href="{{ path('camera_show') }}" class="list-group-item"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Camera <span class="badge">1</span></a>
+
+{% endblock %}
+
+
+
+{% block body %}
+
+    <div class="top-button-group">
+        <a href="{{ path('academic_year') }}" class="button-style btn btn-warning top-button">Back</a>
+    </div>
+
+
+    {#  TODO -> show academic year information #}
+
+    <h3 class='title-application'> Academic Year Details </h3>
+
+    <div class="position_0" >
+
+
+        <dl id="p_info">
+            <dt id="shw">
+                <span class="middle_con"></span>
+                Academic Year
+            </dt>
+            <dd id="shw">
+                {{ ac.year }}
+            </dd>
+
+            <dt id="shw">
+                <span class="middle_con"></span>
+                Semester
+            </dt>
+            <dd id="shw">
+                {{ ac.semester }}
+            </dd>
+
+            <dt id="shw">
+                <span class="middle_con"></span>
+                Start Day
+            </dt>
+            <dd id="shw">
+                {{ ac.startDate|date('Y-m-d') }}
+            </dd>
+
+
+            <dt id="shw">
+                <span class="middle_con"></span>
+                End Day
+            </dt>
+            <dd id="shw">
+                {{ ac.endDate|date('Y-m-d') }}
+            </dd>
+
+        </dl>
+    </div>
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading main-color-bg">
+            <h3 class="panel-title">Registered Staff</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped table-hover">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone Nr.</th>
+                    <th>Actions</th>
+                </tr>
+
+
+                {% for row in staff %}
+                    <tr>
+                        <td>{{ row.name~" "~row.surname }}</td>
+                        <td> {{ row.email }}</td>
+                        <td> {{ row.phoneNr }}</td>
+                        <td>
+                            <a href="{{ path('show_information', {'person': row.id }) }}" class="btn-form btn-sm btn-block btn-primary">Info</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+    </div>
+
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading main-color-bg">
+            <h3 class="panel-title">Registered Students</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped table-hover">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone Nr.</th>
+                    <th>Actions</th>
+                </tr>
+
+                {% for row in student %}
+                    <tr>
+                        <td>{{ row.name~" "~row.surname }}</td>
+                        <td> {{ row.email }}</td>
+                        <td> {{ row.phoneNr }}</td>
+                        <td>
+                            <a href="{{ path('show_information', {'person': row.id }) }}" class="btn-form btn-sm btn-block btn-primary">Info</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

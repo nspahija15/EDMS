@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+    <!-- Bootstrap core CSS -->
+
+      {% block stylesheet %}
+
+          <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+          <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+          <link href="{{ asset('assets/css/coming-soon.css') }}" rel="stylesheet">
+
+      {% endblock %}
+
+  </head>
+
+  <body>
+
+
+
+  <nav class="navbar navbar-default">
+      <div class="container">
+          <div class="navbar-header">
+
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="#">Epoka Dormitory Management System</a>
+
+          </div>
+          {#<div id="navbar" class="collapse navbar-collapse ">#}
+          {#<a class="nav navbar-nav" href="#" > sa </a>#}
+          {#</div><!--/.nav-collapse -->#}
+
+          <div id="navbar" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                  <li><a href="{{ path('homepage') }}">Home</a></li>
+                  <li><a href="#">Information</a></li>
+                  <li><a href="{{ path('dorm_application') }}">Apply</a></li>
+                  <li class="active"><a href="{{ path('login') }}">Login</a></li>
+              </ul>
+
+          </div><!--/.nav-collapse -->
+
+
+      </div>
+  </nav>
+
+    <header id="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-center">
+
+                <img src="{{ asset('assets/images/ts_icon.svg') }}" class="logo-image" />
+                {#EDMS <small>Account Login</small>#}
+            </h1>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="main">
+      <div class="container">
+        <div class="row">
+
+
+            {% if error %}
+
+                <div class="col-md-4 col-md-offset-4" style="background-color: red; color: white;">
+                    {{ error.messageKey|trans(error.messageData, 'security') }}
+                </div>
+
+            {% endif %}
+
+
+          <div class="col-md-4 col-md-offset-4">
+
+            {{ form_start(form) }}
+
+              <div class="form-group">
+                {{ form_row(form.username) }}
+              </div>
+
+              <div class="form-group">
+                {{ form_row(form.password) }}
+              </div>
+
+              <button type="submit" class="btn btn-default btn-block">Login</button>
+
+            {{ form_end(form) }}
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {#<footer id="footer">#}
+      {#<p>Copyright EDMS Group, &copy {{ 'now'|date('Y') }} </p>#}
+    {#</footer>#}
+
+  <script>
+     CKEDITOR.replace( 'editor1' );
+  </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    {% block javascript %}
+        <script src="{{ asset('assets/js/jquery.js') }}"></script>
+        <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('assets/js/ckeditor.js') }}"></script>
+    {% endblock %}
+
+
+  </body>
+</html>

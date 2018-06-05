@@ -1,0 +1,65 @@
+# To get started with security, check out the documentation:
+# https://symfony.com/doc/current/security.html
+security:
+
+    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    providers:
+#        in_memory:
+#            memory: ~
+
+        db_users:
+            entity: { class: AppBundle\Entity\Person, property: username }
+
+
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+
+        main:
+            anonymous: ~
+            # activate different ways to authenticate
+
+#
+
+            form_login:
+
+#                logout: logout
+
+#                default_target_path: /redirect
+#                failure_path: /login
+#
+#                always_use_default_target_path: true
+#                use_referer: true
+
+
+            logout:
+                path: logout
+                target: homepage
+
+
+            guard:
+                authenticators:
+                    - app.security.login_form_authenticator
+
+
+
+    access_control:
+            - { path: ^/finance, roles: ROLE_FINANCE }
+            - { path: ^/student, roles: ROLE_STUDENT }
+            - { path: ^/assistent, roles: ROLE_ASSIST }
+            - { path: ^/director, roles: ROLE_DIRECT }
+            - { path: ^/tech, roles: ROLE_TECH }
+            - { path: ^/report/server, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+            - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+           
+#        - { path: ^/manager, roles: ROLE_MANAG }
+
+
+#    encoders:
+#        UserBundle\Entity\User: bcrypt
+
+

@@ -1,0 +1,211 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {#<meta name="viewport" content="width=device-width, initial-scale=1">#}
+    <title>{{ title }}</title>
+    <!-- Bootstrap core CSS -->
+
+    {% block stylesheet %}
+
+        <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+        {#<link href="{{ asset('assets/css/slider_with_content.css') }}" rel="stylesheet">#}
+
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+        {# 
+            font-family: 'Montserrat', sans-serif;
+        #}
+
+        <link href="{{ asset('assets/css/font-awesome.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/coming-soon.css') }}" rel="stylesheet">
+
+
+    {% endblock %}
+
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="#">
+                    Epoka Dormitory Management System
+                    {#<img style="" src="{{ asset('assets/images/edms.png') }}" height="100px">#}
+                </a>
+
+            </div>
+
+            {#<div id="navbar" class="collapse navbar-collapse ">#}
+                {#<a class="nav navbar-nav" href="#" > sa </a>#}
+            {#</div><!--/.nav-collapse -->#}
+
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+
+                    {% block navbar %}
+                        <li class="active"><a href="{{ path('homepage') }}">Home</a></li>
+                        <li><a href="{{ path('information') }}">Information</a></li>
+                        <li><a href="{{ path('dorm_application') }}">Apply</a></li>
+                        <li><a href="{{ path('login') }}">Login</a></li>
+                    {% endblock %}
+
+                </ul>
+
+            </div><!--/.nav-collapse -->
+
+        </div>
+    </nav>
+
+
+
+        {% block body %}
+
+
+            <div class="container">
+                <div class="" id="messages">
+                    {% for type, messages in app.session.flashbag.all() %}
+                        {% for message in messages %}
+
+                            {% if type == 'success' %}
+                                <div id="alert-box" class="messages alert alert-success" role="alert">
+                                    {{ message }}
+                                </div>
+                            {% endif %}
+
+                            {% if type == 'failure' %}
+                                <div id="alert-box" class="messages alert alert-danger" role="alert">
+                                    {{ message }}
+                                </div>
+                            {% endif %}
+
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+
+
+
+
+        <div class="overlay"></div>
+
+            <div class="masthead">
+                <div class="masthead-bg"></div>
+                <div class="continer h-100">
+                    <div class="h-100">
+                        <div class="col-12 my-auto">
+                            <div class="masthead-content text-white py-5 py-md-0">
+
+
+                                <div class="col-md-12">
+                                    <h1>Welcome to Epoka Dormitory Management System</h1>
+
+                                    <h6>We're working hard to finish the development of this site. Our target launch date is
+                                       <strong>12-06-2019</strong></h6>
+                                   <div class="space-maker"></div>
+                                    <h2><small  style="color:lightcoral;"> The Application for the Dormitory <b>had started!</b></small></h2>
+                                    <h2><small  style="color:lightcoral;"> <b>Apply now</b> for this academic semester!</small></h2>
+                                   <div class="space-maker"></div>
+                                   <div class="input-group input-group-newsletter">
+
+                                           {#class="btn btn-secondary" type="button"#}
+                                           <a href="{{ path('dorm_application') }}" class="show_pointer btn-lg btn-secondary">Apply Now !</a>
+                                   </div>
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-icons">
+                <ul class="list-unstyled text-center mb-0">
+                    <li class="list-unstyled-item">
+                        <a href="#">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="list-unstyled-item">
+                        <a href="#">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li class="list-unstyled-item">
+                        <a href="#">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+
+        {% endblock %}
+
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+{% block javascript %}
+
+    <script src="{{ asset('assets/js/jquery.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    {#<script src="{{ asset('assets/js/ckeditor.js') }}"></script>#}
+    {#<script src="{{ asset('assets/js/slider_with_content.js') }}"></script>#}
+                {#<script src="vendor/vide/jquery.vide.min.js"></script>#}
+
+    <script src="{{ asset('assets/js/jquery.vide.min.js') }}"></script>
+    {#<script src="{{ asset('assets/js/coming-soon.min.js') }}"></script>#}
+
+
+
+
+
+{% endblock %}
+
+
+
+<script>
+
+    (function($) {
+        "use strict"; // Start of use strict
+
+        // Vide - Video Background Settings
+        $('body').vide({
+            mp4: "{{ asset('assets/mp4/ep.mp4') }}",
+            poster: "{{ asset('assets/images/wb.jpg') }}"
+        }, {
+            posterType: 'jpg'
+        });
+
+    })(jQuery); // End of use strict
+
+</script>
+
+
+
+</body>
+</html>

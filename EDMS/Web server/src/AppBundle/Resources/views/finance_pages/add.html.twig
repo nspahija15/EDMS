@@ -1,0 +1,81 @@
+{% extends "@App/finance_pages/index.html.twig" %}
+
+
+ {% block showUser %}
+     <li>
+         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Welcome, {{ user.name }} <span class="caret"></span></a>
+         <ul class="dropdown-menu">
+             <li class="active">
+                 {% if user.image is empty %}
+                     <img src="{{ asset('assets/person_images/default.png') }}" width="100px" class="img-rounded">
+                 {% else %}
+                     <img src="{{ asset('assets/person_images/'~user.image) }}" width="100px" class="img-rounded">
+                 {% endif %}
+             </li>
+             <li role="separator" class="divider"></li>
+             <li class="dropdown-header">{{ user.type|upper }}</li>
+         </ul>
+     </li>
+ {% endblock %}
+
+
+{% block navbar %}
+    <li class="active"><a href="{{ path('finance') }}">Home</a></li>
+    <li><a href="{{ path('show_student')}}">students</a></li>
+    <li><a href="{{ path('profile')}}">Profile</a></li>
+    <li><a href="{{ path('add')}}">Add Payment</a></li>
+{% endblock %}
+
+
+{% block breadcrumb %}
+    <li>/<a href="{{ path('finance') }}">Home</a></li>
+    <li class="active">/<a href="#">add</a></li>
+{% endblock %}
+
+{% block page_title %}
+    <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Student Finance <small>Dorm Management System</small></h1>
+{% endblock %}
+
+
+{% block body %}
+
+
+
+    <h3 class="title-application">Add Payment</h3>
+
+    <div class="panel panel-default">
+        <div class="panel-heading main-color-bg">
+            <h3 class="panel-title">Payments</h3>
+        </div>
+        <div class="panel-body">
+
+
+            {{ form_start(form) }}
+            <H3>new Payment</H3>
+            {{ form_widget(form) }}
+            <input type="submit" value="Create" class="btn btn-success" />
+            {{ form_end(form) }}
+
+
+
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

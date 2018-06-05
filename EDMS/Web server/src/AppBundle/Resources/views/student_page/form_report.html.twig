@@ -1,0 +1,73 @@
+
+{% extends "@App/student_page/index.html.twig" %}
+
+
+{% block showUser %}
+
+{% endblock %}
+
+{% block navbar %}
+    <li><a href="{{ path('redirect_pages') }}">Home</a></li>
+    <li><a href="{{ path('view_assistant_stud') }}">Assistants</a></li>
+    <li class="active"><a href="{{ path('report_problem_stud') }}">Report a problem</a></li>
+    <li><a href="{{ path('view_payments_stud') }}">View Payments</a></li>
+    <li><a href="{{ path('show_profile_stud') }}">Profile</a></li>
+{% endblock %}
+
+{% block breadcrumb %}
+    <li>/<a href="{{ path('redirect_pages') }}">Home</a></li>
+    <li class="active">/<a href="{{ path('report_problem_stud') }}">Problem Report</a></li>
+{% endblock %}
+
+
+{% block page_title %}
+    <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Report Problem <small>Dorm Management System</small></h1>
+{% endblock %}
+
+
+{% block body %}
+
+    <!-- Latest Users -->
+
+    <div class="top-button-group">
+        <a href="{{ path('redirect_pages') }}" class="button-style btn btn-warning top-button">Back</a>
+    </div>
+
+
+    <div>
+
+        <h3 class='title-application'> Report a Problem </h3>
+
+        <div class="col-md-6">
+
+            {{ form_start(repForm) }}
+
+            <div class="form-group">
+                {{ form_row(repForm.name) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_row(repForm.place) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_row(repForm.description) }}
+            </div>
+
+            <button type="submit" class="button-style btn btn-success"> Submit </button>
+
+
+            {{ form_end(repForm) }}
+
+
+        </div>
+
+    </div>
+
+{% endblock %}
+
+
+
+
+
+
